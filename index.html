@@ -118,8 +118,16 @@
   </div>
 
   <script>
-    document.getElementById('btnEncode').addEventListener('click',()=> document.getElementById('resultEncode').innerHTML = encode(document.getElementById('inputEncode').value));
-    document.getElementById('btnDecode').addEventListener('click',()=> document.getElementById('resultDecode').innerHTML = decode(document.getElementById('inputDecode').value));
+    let rD = document.getElementById('resultDecode'),
+        bD = document.getElementById('btnDecode'),
+        iD = document.getElementById('inputDecode'),
+        rE = document.getElementById('resultEncode'),
+        bE = document.getElementById('btnEncode'),
+        iE = document.getElementById('inputEncode');
+
+    bE.addEventListener('click',()=> rE.innerHTML = encode(iE.value));
+    bD.addEventListener('click',()=> rD.innerHTML = decode(iD.value));
+    rD.addEventListener('click',()=> window.open(`https://www.duckduckgo.com/?q=${rD.innerHTML}+jav`, '_blank'));
   </script>
 </body>
 </html>
