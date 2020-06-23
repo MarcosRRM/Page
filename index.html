@@ -135,6 +135,10 @@
         font-size: 20px;
         color: white;
       }
+      .content{
+      	min-width: 300px;
+        width: 80%;
+      }
       h1{
         width: fit-content;
         font-size: 30px;
@@ -148,19 +152,30 @@
         font-weight: bold;
       }
       input{
+      	float: left;
+      	width: 48%;
         border-color: white;
         border-style: solid;
         border-width: 0px 0px 2px 0px;
         background-color: transparent;
       }
+      .content .result{
+      	min-height: 25px;
+        border-color: white;
+        border-style: solid;
+        border-width: 0px 0px 2px 0px;
+      	float: right;
+        width: 48%;
+      }
+      
     </style>
   </head>
 <body>
-  <h1>JAV SERIAL ENCODER</h1>
-  <div style="max-width: 300px;">
-    <input id="inputEncode" type="text"></input></br>
+  <h1>CUSTOM SERIAL ENCODER</h1>
+  <div class="content">
+    <input id="inputEncode" type="text"></input><div class="result" id="resultEncode">Result</div></br>
     <button id="btnEncode">ENCODE</button></br>
-    <input id="inputDecode" type="text" ></input></br>
+    <input id="inputDecode" type="text" ></input><div class="result" id="resultDecode">Result</div></br>
     <button id="btnDecode">DECODE</button></br>
 
     <div style="font-weight: lighter; font-size: 10px; margin-top: 30px; text-align: center;">©2020 Marcos R. R. Marques</div>
@@ -168,10 +183,10 @@
 
   <script>
     document.getElementById('btnEncode').addEventListener('click',()=>{
-      document.getElementById('inputDecode').value = encode(document.getElementById('inputEncode').value);
+      document.getElementById('resultEncode').innerHTML = encode(document.getElementById('inputEncode').value);
     })
     document.getElementById('btnDecode').addEventListener('click',()=>{
-      document.getElementById('inputEncode').value = decode(document.getElementById('inputDecode').value);
+      document.getElementById('resultDecode').innerHTML = decode(document.getElementById('inputDecode').value);
     })
   </script>
 </body>
