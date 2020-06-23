@@ -1,88 +1,11 @@
 <html>
   <head>
     <script>
-      let letterEncodig={
-        A:'L',
-        B:'V',
-        C:'X',
-        D:'S',
-        E:'W',
-        F:'D',
-        G:'F',
-        H:'G',
-        I:'U',
-        J:'H',
-        K:'J',
-        L:'K',
-        M:'N',
-        N:'B',
-        O:'I',
-        P:'O',
-        Q:'P',
-        R:'E',
-        S:'A',
-        T:'R',
-        U:'Y',
-        V:'C',
-        W:'Q',
-        X:'Z',
-        Y:'T',
-        Z:'M'
-      }
-      let numberEncoding={
-        1:'2',
-        2:'3',
-        3:'4',
-        4:'5',
-        5:'6',
-        6:'7',
-        7:'8',
-        8:'9',
-        9:'0',
-        0:'1'
-      }
+      let letterEncodig ={A:'L',B:'V',C:'X',D:'S',E:'W',F:'D',G:'F',H:'G',I:'U',J:'H',K:'J',L:'K',M:'N',N:'B',O:'I',P:'O',Q:'P',R:'E',S:'A',T:'R',U:'Y',V:'C',W:'Q',X:'Z',Y:'T',Z:'M'}
+      let numberEncoding={1:'2',2:'3',3:'4',4:'5',5:'6',6:'7',7:'8',8:'9',9:'0',0:'1'}
 
-      let letterDecoding={
-        L:'A',
-        V:'B',
-        X:'C',
-        S:'D',
-        W:'E',
-        D:'F',
-        F:'G',
-        G:'H',
-        U:'I',
-        H:'J',
-        J:'K',
-        K:'L',
-        N:'M',
-        B:'N',
-        I:'O',
-        O:'P',
-        P:'Q',
-        E:'R',
-        A:'S',
-        R:'T',
-        Y:'U',
-        C:'V',
-        Q:'W',
-        Z:'X',
-        T:'Y',
-        M:'Z'
-      }
-
-      let numberDecoding={
-        2:'1',
-        3:'2',
-        4:'3',
-        5:'4',
-        6:'5',
-        7:'6',
-        8:'7',
-        9:'8',
-        0:'9',
-        1:'0'
-      }
+      let letterDecoding={L:'A',V:'B',X:'C',S:'D',W:'E',D:'F',F:'G',G:'H',U:'I',H:'J',J:'K',K:'L',N:'M',B:'N',I:'O',O:'P',P:'Q',E:'R',A:'S',R:'T',Y:'U',C:'V',Q:'W',Z:'X',T:'Y',M:'Z'}
+      let numberDecoding={2:'1',3:'2',4:'3',5:'4',6:'5',7:'6',8:'7',9:'8',0:'9',1:'0'}
 
       let encode = (str='')=>{
         let ret = '';
@@ -120,6 +43,7 @@
         return ret
       }
     </script>
+
     <style>
       body{
         background-color: rgb(37, 37, 37);
@@ -132,7 +56,8 @@
         font-family: Arial, Helvetica, sans-serif;
         margin-top: 10px;
         width: 100%;
-        font-size: 20px;
+        font-size: 40px;
+        line-height: 50px;
         color: white;
       }
       .content{
@@ -141,7 +66,9 @@
       }
       h1{
         width: fit-content;
-        font-size: 30px;
+        font-size: 50px;
+        line-height: unset !important;
+        text-align: center;
       }
       button{
         border-color: white;
@@ -160,34 +87,37 @@
         background-color: transparent;
       }
       .content .result{
-      	min-height: 25px;
+      	min-height: 50px;
         border-color: white;
         border-style: solid;
         border-width: 0px 0px 2px 0px;
       	float: right;
         width: 48%;
       }
+
+      .copyright{
+        font-weight: lighter;
+        font-size: 20px;
+        margin-top: 30px;
+        text-align: center;
+      }
       
     </style>
   </head>
 <body>
-  <h1>CUSTOM SERIAL ENCODER</h1>
+  <h1>CUSTOM<br/>SERIAL<br/>ENCODER</h1>
   <div class="content">
     <input id="inputEncode" type="text"></input><div class="result" id="resultEncode">Result</div></br>
     <button id="btnEncode">ENCODE</button></br>
     <input id="inputDecode" type="text" ></input><div class="result" id="resultDecode">Result</div></br>
     <button id="btnDecode">DECODE</button></br>
 
-    <div style="font-weight: lighter; font-size: 10px; margin-top: 30px; text-align: center;">©2020 Marcos R. R. Marques</div>
+    <div class="copyright">©2020 Marcos R. R. Marques</div>
   </div>
 
   <script>
-    document.getElementById('btnEncode').addEventListener('click',()=>{
-      document.getElementById('resultEncode').innerHTML = encode(document.getElementById('inputEncode').value);
-    })
-    document.getElementById('btnDecode').addEventListener('click',()=>{
-      document.getElementById('resultDecode').innerHTML = decode(document.getElementById('inputDecode').value);
-    })
+    document.getElementById('btnEncode').addEventListener('click',()=> document.getElementById('resultEncode').innerHTML = encode(document.getElementById('inputEncode').value));
+    document.getElementById('btnDecode').addEventListener('click',()=> document.getElementById('resultDecode').innerHTML = decode(document.getElementById('inputDecode').value));
   </script>
 </body>
 </html>
